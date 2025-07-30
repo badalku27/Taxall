@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #00cec9;
+  --accent-color: #fdcb6e;
+  --background-color: #f9f9f9;
+  --text-color: #2d3436;
+  --card-background: #ffffff;
+  --input-background: #f0f0f0;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.update-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.update-details-wrapper {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.page-title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+  letter-spacing: 1px;
+}
+
+.profile-image-section {
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color) !important;
+}
+
+.avatar-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: var(--input-background);
+}
+
+.profile-avatar {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.avatar-container:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.avatar-edit-icon {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.edit-icon {
+  font-size: 2rem !important;
+}
+
+.file-input {
+  display: none;
+}
+
+.default-avatar {
+  background-color: var(--accent-color) !important;
+  color: #ffffff !important;
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+}
+
+.upload-hint {
+  color: #ffffff !important;
+  margin-top: 1rem !important;
+  font-size: 0.9rem !important;
+  opacity: 0.8;
+}
+
+.form-container {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.form-section {
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 250px;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.form-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: var(--primary-color) !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.half-width {
+  width: calc(50% - 0.5rem);
+}
+
+/* Add styles for the date of birth field */
+.MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75) !important;
+}
+
+.text-field {
+  margin-bottom: 1.25rem !important;
+}
+
+.text-field .MuiOutlinedInput-root {
+  background: var(--input-background);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.text-field .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.text-field:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-color);
+}
+
+.text-field.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--secondary-color) !important;
+}
+
+.text-field .MuiInputLabel-root {
+  color: var(--text-color);
+}
+
+.text-field .MuiInputLabel-root.Mui-focused {
+  color: var(--secondary-color);
+}
+
+.text-field .MuiInputBase-input {
+  color: var(--text-color);
+}
+
+.email-section {
+  background-color: #f0f7ff;
+}
+
+.current-email {
+  background: var(--card-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.email-label {
+  color: var(--text-color) !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.email-value {
+  font-weight: 500 !important;
+  color: var(--text-color) !important;
+}
+
+.otp-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--secondary-color);
+}
+
+.otp-field {
+  letter-spacing: 2px;
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.update-button {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+  margin-top: 1rem !important;
+}
+
+.update-button:hover {
+  background: darken(var(--primary-color), 10%) !important;
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3) !important;
+}
+
+.email-button {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  margin-top: 0.5rem !important;
+}
+
+.email-button:hover {
+  background: rgba(108, 92, 231, 0.08) !important;
+}
+
+.verify-button {
+  background: var(--secondary-color) !important;
+  color: #ffffff !important;
+  margin-top: 1rem !important;
+}
+
+.verify-button:hover {
+  background: darken(var(--secondary-color), 10%) !important;
+  box-shadow: 0 6px 20px rgba(0, 206, 201, 0.3) !important;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--background-color);
+}
+
+.loading-spinner {
+  color: var(--primary-color) !important;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background: var(--background-color);
+}
+
+.error-message {
+  background: #fff5f5;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid #e74c3c;
+  max-width: 500px;
+}
+
+/* Add styles for the mobile number field */
+.mobile-number-field {
+  position: relative;
+  width: 100%;
+}
+
+.mobile-number-field .MuiFormHelperText-root {
+  margin-left: 0;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .update-details-container {
+    padding: 1rem;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-section {
+    flex: 1 1 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+
+  .profile-header {
+    padding: 2rem 1rem;
+  }
+
+  .avatar-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .page-title {
+    font-size: 1.75rem !important;
+  }
+
+  .section-title {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-details-container {
+    padding: 0.5rem;
+  }
+
+  .update-details-wrapper {
+    border-radius: 0;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .profile-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .avatar-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .page-title {
+    font-size: 1.5rem !important;
+  }
+
+  .section-title {
+    font-size: 1.1rem !important;
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
+  "routes": [
+    { "src": "/sitemap.txt", "dest": "/sitemap.txt" },
+    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

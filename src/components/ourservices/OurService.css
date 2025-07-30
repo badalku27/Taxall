@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap");
+
+.service-section {
+  padding: 80px 20px;
+  background: linear-gradient(45deg, #000, #444444);
+  min-height: 100vh;
+  margin: 1%;
+  border-radius: 15px;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.main-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.sub-heading {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #e5e5e5;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service card with #eaeaea background */
+.service-card {
+  background: #eaeaea;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon-container {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #000, #434242);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-container {
+  transform: scale(1.1);
+}
+
+.service-icon {
+  font-size: 32px;
+  color: white;
+}
+
+.service-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 15px 0 12px;
+  color: #1a1a1a;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.service-title::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(45deg, #000, #434242);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.service-description {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+  flex-grow: 1;
+}
+
+.service-button {
+  display: inline-block;
+  margin-top: auto;
+  padding: 12px 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  border: none;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.service-button:hover {
+  background: linear-gradient(135deg, #0072ff, #0048ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Simple Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-body p {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+  border-color: #ccc;
+  background: #f9f9f9;
+}
+
+.whatsapp-btn {
+  border-color: #25d366;
+  color: #25d366;
+}
+
+.whatsapp-btn:hover {
+  background: #25d366;
+  color: white;
+}
+
+.email-btn {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.email-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 3.2rem;
+  }
+  .sub-heading {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+  .service-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 400px;
+  }
+  .service-card {
+    padding: 25px 20px;
+    min-height: 280px;
+  }
+  .service-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  .service-icon {
+    font-size: 28px;
+  }
+  .service-title {
+    font-size: 1.4rem;
+  }
+  .service-description {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .contact-btn {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2.8rem;
+  }
+  .sub-heading {
+    font-size: 1.1rem;
+  }
+}

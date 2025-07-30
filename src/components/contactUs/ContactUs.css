@@ -1,0 +1,172 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact-us {
+  padding:1%;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+  padding: 4vh 2vw;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #000, #434242);
+}
+
+.contact-info h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+   font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+  margin-bottom: 1vh;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 3vh;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.detail-item a,
+.detail-item span {
+  color: #f7fbff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: linear-gradient(135deg, #ff7e5f, #feb47b);;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(45deg, #000, #434242);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2vh;
+  }
+
+  .contact-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  .contact-details {
+    gap: 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+
+  .detail-item a,
+  .detail-item span {
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
+
+/* Media Queries for Large Screens (apply 90% width for input and button) */
+@media (min-width: 1024px) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 90%;
+  }
+}

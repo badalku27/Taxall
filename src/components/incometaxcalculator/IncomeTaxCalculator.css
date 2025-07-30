@@ -1,0 +1,304 @@
+/*===============================================
+=          Modern Glassmorphism Variables       =
+===============================================*/
+:root {
+  --primary-color: #4eac9e; /* Teal */
+  --primary-gradient: linear-gradient(135deg, #4eac9e, #72d2c7);
+  --secondary-color: #a293e8; /* Soft Lavender */
+  --secondary-gradient: linear-gradient(135deg, #a293e8, #b0a8f0);
+  --accent-color: #ff8a65; /* Coral Accent */
+  --text-color: #ffffff; /* All text will be white */
+  --border-color: rgba(255, 255, 255, 0.3);
+
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --backdrop-blur: 10px;
+  --shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  --transition-speed: 0.3s;
+  --radius: 15px;
+  --max-width: 900px;
+  --font-family: "Poppins", sans-serif;
+}
+
+/*===============================================
+=                   Reset                     =
+===============================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  /* Background gradient remains unchanged */
+  background: linear-gradient(45deg, #000, #444444);
+  color: var(--text-color); /* All text white */
+  line-height: 1.6;
+}
+
+/*===============================================
+=                Main Container               =
+===============================================*/
+.income-tax-calculator {
+  max-width: var(--max-width);
+  margin: 7rem auto;
+  padding: 2rem;
+  background: linear-gradient(45deg, #000, #444444);
+  border-radius: var(--radius);
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+}
+
+/*===============================================
+=              Step Indicator Styling           =
+===============================================*/
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.step .step-number {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.step.active .step-number,
+.step.completed .step-number {
+  background: var(--accent-color);
+  color: var(--text-color);
+}
+
+.step .step-label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.step.active .step-label,
+.step.completed .step-label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/*===============================================
+=                   Sections                  =
+===============================================*/
+.section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+/*-----------------------------------------------
+| Headings
+-----------------------------------------------*/
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  /* Force white text */
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  /* Force white text */
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/*-----------------------------------------------
+| Form Groups & Inputs
+-----------------------------------------------*/
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.1);
+  /* Force input text color white */
+  color: #ffffff;
+  transition: border var(--transition-speed), background-color var(--transition-speed);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+/*-----------------------------------------------
+| Grid Layout for Income Details & Deductions
+-----------------------------------------------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/*===============================================
+=                Button Styling               =
+===============================================*/
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition-speed), transform 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.back-btn {
+  background: var(--secondary-gradient);
+}
+
+.back-btn:hover {
+  background: var(--secondary-color);
+}
+
+/*===============================================
+=           Comparison Table Styling          =
+===============================================*/
+.comparison-table {
+  overflow-x: auto;
+  margin: 2rem auto;
+  border-radius: var(--radius);
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  /* Force table text white */
+  color: #ffffff;
+}
+
+.comparison-table th {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*===============================================
+=           Summary Message Styling           =
+===============================================*/
+.summary-message {
+  text-align: center;
+  font-size: 1.25rem;
+  /* Force summary message text white */
+  color: #ffffff;
+  margin-top: 1.5rem;
+}
+
+/*===============================================
+=           Charts Flex Container             =
+===============================================*/
+.charts-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bar-chart-container,
+.pie-chart-container {
+  flex: 1 1 300px;
+}
+
+/*===============================================
+=           Responsive Adjustments            =
+===============================================*/
+@media (max-width: 600px) {
+  .income-tax-calculator {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+}
+
